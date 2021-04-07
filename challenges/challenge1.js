@@ -22,6 +22,8 @@
  *  I think it will print in the same order as above. I think the timeout of 0ms is misleading
  * because i think the time it will take for it to address that, step 3 will have already printed. 
  * 
+ * NICE. I somewhat expected my answer to be wrong because i love cheering for the underdog. I was correct, 
+ * but i didnt expect to be. 
  *******************************************************************************
  */
 
