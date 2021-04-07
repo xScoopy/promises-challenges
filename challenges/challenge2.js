@@ -7,15 +7,21 @@
  *    it runs? Run the code using `node challenge2.js` and verify that your
  *    expectation was correct.
  * 
+ * I think the greet result will be printed, followed by the make school statement in all uppercase. 
  * 
  * 2. What happens if greet() fails? Make it fail by changing 'name' to a number
  *    instead of a string. What happens? Does uppercaser() still run?
  * 
+ *  If greet fails, i don't think any other promises will be resolved. Especially in this case where
+ * the uppercase is dependent on the greet resolution being fulfilled. 
+ * No, uppercaser does not still run. Once it rejects the first one, it's donezo. 
  * 
  * 3. What happens if greet() succeeds and uppercaser() fails? Modify your code
  *    to achieve this result by changing the values of 'name' and 'my_str' and
  *    run the code again.
  * 
+ * greet will still log to the console since the timeout on the uppercaser hasnt finished yet. 
+ * It cant catch the error in uppercaser until it finishes printing the greeting to the console. 
  * 
  * 4. Write a method that takes a string as input and returns the input string
  *    with a space added between each character. E.g. 'foo' -> 'f o o'
@@ -63,8 +69,8 @@ function uppercaser(str) {
     });
 }
 
-name = 'Ducky'
-my_str = 'Make School is Awesome!!!'
+name = 'yo'
+my_str = 2
 
 greet(name)
     .then((greetResult) => {
