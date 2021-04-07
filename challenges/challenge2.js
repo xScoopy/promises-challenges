@@ -52,7 +52,21 @@ function greet(name) {
       }, 1000);
     });
 }
-
+/** 
+ * Returns a spaced out version of a string
+ * @param str The name of the string to be spaced out
+ */
+function spacer(str) { 
+    return new Promise(function(resolve, reject)  {
+      setTimeout(function() { 
+        if (typeof str === 'string') {
+          resolve(str.split('').join(" "));
+        } else {
+          reject('Input must be a string!')
+        }
+      }, 2500);
+    })
+}
 /**
  * Returns the uppercased version of a string.
  * @param {*} str The string to uppercase.
@@ -69,8 +83,8 @@ function uppercaser(str) {
     });
 }
 
-name = 'yo'
-my_str = 2
+name = "Jackie"
+my_str = "make school is awesome"
 
 greet(name)
     .then((greetResult) => {
@@ -79,7 +93,12 @@ greet(name)
     })
     .then((uppercaserResult) => {
         console.log(uppercaserResult)
-    }).catch((err) => {
+        return spacer(my_str);
+    })
+    .then((spacerResult) => {
+      console.log(spacerResult)
+    })
+    .catch((err) => {
         console.log('Received an error!')
         console.log(err);
     });
